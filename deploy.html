@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WUPTV Deploy | Launch Your Units</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            color: #f2f2f2;
+            min-height: 100vh;
+        }
+        nav {
+            background: rgba(217, 76, 255, 0.1);
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 2px solid #d94cff;
+        }
+        nav a {
+            color: #d94cff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ff70ff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-family: "Orbitron", sans-serif;
+            background: linear-gradient(90deg, #d94cff, #ff70ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .deploy-interface {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        .deploy-status {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 255, 150, 0.1);
+            border: 1px solid #00ff96;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .deploy-button {
+            background: #d94cff;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .deploy-button:hover {
+            background: #ff70ff;
+            transform: scale(1.02);
+        }
+        .tips {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="vault.html">Vault</a> |
+        <a href="studio.html">Studio</a> |
+        <a href="builder.html">Builder</a> |
+        <a href="checkout.html">Checkout</a> |
+        <a href="ledger.html">Ledger</a> |
+        <a href="deploy.html">Deploy</a>
+    </nav>
+
+    <div class="container">
+        <h1>Deploy Console</h1>
+        <p style="text-align: center; font-size: 1.2rem; color: #ccc;">Launch your units to the platform</p>
+
+        <div class="deploy-status">
+            <h3 style="color: #00ff96;">🚀 System Status: READY</h3>
+            <p>All systems operational. Ready for deployment.</p>
+        </div>
+
+        <div class="deploy-interface">
+            <h3 style="color: #d94cff;">Quick Deploy</h3>
+            <p>Deploy your latest units to the WUPTV platform</p>
+            <button class="deploy-button" onclick="deployUnits()">Deploy Now</button>
+        </div>
+
+        <div class="tips">
+            <h3 style="color: #ff70ff;">💡 Deploy Tips</h3>
+            <ul style="color: #ccc;">
+                <li>Use <strong>Pulse Vixen</strong> for looping intros on TikTok/Shorts</li>
+                <li>Best aura setting: <em>Soft Glow</em> for maximum engagement</li>
+                <li>Recommended CTA: "Start With Presence"</li>
+                <li>Deploy during peak hours (7-9 PM) for better reach</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>© 2025 WUPTV. All rights reserved.</footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

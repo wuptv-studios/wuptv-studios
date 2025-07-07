@@ -1,0 +1,137 @@
+Here’s your Ghost Diagnostic & Add-On Pack based on your current code and uploaded file.
+
+
+---
+
+🔍 DIAGNOSTIC STATUS
+
+✅ Already Working
+
+HTML loads correctly
+
+Vault renders Femme Units from femme-units.json
+
+Script and style are clean
+
+Ghostframe is functional on load
+
+
+
+---
+
+🔧 ADD-ON MODULES (No subtractions, only upgrades)
+
+
+---
+
+1. 🔒 Tier Locking System (Basic, Myth)
+
+➕ Add to script.js (after renderVault):
+
+lockVault: (units) => {
+    const vault = document.getElementById("vault");
+    if (!vault) return;
+
+    const lockedTiers = ["myth"]; // Customize this list
+
+    units.forEach((unit, i) => {
+      if (lockedTiers.includes(unit.tier)) {
+        const unitEl = vault.children[i];
+        unitEl.style.filter = "blur(6px)";
+        unitEl.innerHTML += `<p style="color:red;font-weight:bold;">🔒 Locked - Upgrade to Access</p>`;
+      }
+    });
+  }
+
+🔁 Modify renderVault to call lockVault:
+
+renderVault: (units) => {
+    const vault = document.getElementById("vault");
+    if (!vault) return;
+
+    vault.innerHTML = units.map(unit => `
+      <div class="unit ${unit.tier}">
+        <h3>${unit.name}</h3>
+        <p>Aura: ${unit.aura}</p>
+      </div>
+    `).join('');
+
+    Ghostframe.lockVault(units);
+  }
+
+
+---
+
+2. 🎞️ Deploy Suggestion Whisper
+
+➕ Add to script.js:
+
+deployWhisper: () => {
+    const deploy = document.createElement("div");
+    deploy.style.marginTop = "2rem";
+    deploy.innerHTML = `
+      <h2>🚀 Deploy Tips</h2>
+      <p>Try using <strong>Pulse Vixen</strong> as a looping intro for Shorts or TikTok.</p>
+      <p>Best aura: <em>Soft Glow</em>. CTA: “Start With Presence.”</p>
+    `;
+    document.body.appendChild(deploy);
+  }
+
+🔁 Modify init to call it:
+
+init: () => {
+    console.log("Ghostframe active");
+    Ghostframe.loadUnits();
+    Ghostframe.deployWhisper();
+  },
+
+
+---
+
+3. 📜 Sample femme-units.json
+
+Create this in /data/femme-units.json:
+
+[
+  {
+    "name": "Pulse Vixen",
+    "aura": "Soft Glow",
+    "tier": "basic"
+  },
+  {
+    "name": "Myth Mirage",
+    "aura": "Dark Burst",
+    "tier": "myth"
+  }
+]
+
+
+---
+
+4. 🎨 Optional Style Add-ons (<style> section)
+
+#vault {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.unit {
+  transition: all 0.3s ease;
+}
+.unit:hover {
+  transform: scale(1.05);
+}
+
+
+---
+
+✅ Summary:
+
+Your system will now:
+
+Show vault units with locked states
+
+Display Ghostframe whisper tips below
+
+Guide creators toward ideal ad combos
+

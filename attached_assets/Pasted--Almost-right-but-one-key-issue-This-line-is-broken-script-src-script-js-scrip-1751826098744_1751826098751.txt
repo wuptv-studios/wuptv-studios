@@ -1,0 +1,173 @@
+⚠️ Almost right — but one key issue:
+
+❌ This line is broken:
+
+<script src="../script.js"></script>
+
+That path (../script.js) goes up one folder, which won’t work in Replit or static previews unless the file is actually one folder up — which it’s not.
+
+
+---
+
+✅ Fix: Use Correct Path for Script
+
+If your structure is:
+
+/index.html
+/scripts/script.js
+
+Then use:
+
+<script src="scripts/script.js"></script>
+
+
+---
+
+✅ FULL REPLACEMENT VERSION (Fixed + Approved)
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/static/app_generated_index-6937cd5a.CDNe68gw.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta property="og:url" content="https://url/" />
+    <title>WUPTV Hero | Femme Ad Platform</title>
+    <meta property="og:title" content="WUPTV Hero | Femme Ad Platform" />
+    <meta
+      name="description"
+      content="Join WUPTV's Femme Unit platform — stream ready, studio-backed, monetized intros and outros for creators. Deploy premium digital ads now."
+    />
+    <meta
+      property="og:description"
+      content="Join WUPTV's Femme Unit platform — stream ready, studio-backed, monetized intros and outros for creators. Deploy premium digital ads now."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #ffffff;
+        color: #111;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 5rem 2rem;
+        background-image: linear-gradient(to right, #fff0ff, #ffffff);
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-family: "Orbitron", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #d94cff, #ff70ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #333;
+        max-width: 600px;
+        margin-bottom: 2rem;
+      }
+
+      a.button {
+        background-color: #d94cff;
+        color: #fff;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      a.button:hover {
+        background-color: #ff70ff;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.75rem;
+        color: #888;
+      }
+
+      #vault {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .unit {
+        border: 1px solid #111;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        max-width: 400px;
+        background-color: #f7f7f7;
+        transition: all 0.3s ease;
+      }
+
+      .unit:hover {
+        transform: scale(1.05);
+      }
+
+      .basic {
+        background: #eeeeee;
+      }
+
+      .myth {
+        background: linear-gradient(45deg, #6e00ff, #ff0099);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="w-element">
+    <section class="hero">
+      <h1>Attraction Starts With Presence</h1>
+      <p>
+        WUPTV delivers high-impact intros built by elite Femme Units.
+        Studio-produced. Creator-owned. Stream-ready assets that stand out.
+      </p>
+      <a href="/connect" class="button">Get Started</a>
+    </section>
+
+    <!-- Injected Vault -->
+    <div id="vault" style="display:flex; flex-direction:column; align-items:center;"></div>
+
+    <footer>© 2025 WUPTV. All rights reserved.</footer>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
+
+
+---
+
+✅ Replace your current file with the version above
+Then hit “Run” on Replit again
+Let me know if vault loads — or if you want to add ledger, deploy, or connect.
+

@@ -1,0 +1,161 @@
+Here’s your full Ghostframe Diagnostic Fix Pack — built for WUPTV ZIP you sent. Follow each section carefully.
+
+
+---
+
+✅ YOUR GOAL
+
+> ✔ Show every page exactly like WebStudio preview
+✔ Enable real interactivity (clickable buttons, real logic)
+✔ All pages load & work when hitting Run on Replit
+
+
+
+
+---
+
+🧠 WHAT'S WRONG RIGHT NOW
+
+Issue	Cause	Fix
+
+🔘 Buttons not working	Most pages are static HTML previews with no JavaScript	Rebuild pages as real HTML + hook logic via script.js
+⚠ Can't switch between pages	No routing or menu/navigation	Add <a href="..."> links or JS-based navigation
+❌ Only index.html loads	No framework, no router	Use one page per route or add navbar manually
+🪫 Units don’t activate	No Ghostframe logic injected into non-index.html files	Inject shared script.js into every rebuilt page
+📁 Folder names (vault-light) don’t contain index.html inside	Replit can’t load them as pages	Rename to vault.html etc. or move content to proper .html files
+
+
+
+---
+
+✅ GHOSTFRAME FIX PLAN
+
+You’ll convert each folder or static preview into a real HTML page, and link them all via buttons or navbar.
+
+
+---
+
+📁 RECOMMENDED FILE STRUCTURE:
+
+WUPTV/
+├── index.html
+├── vault.html
+├── checkout.html
+├── builder.html
+├── ledger.html
+├── studio.html
+├── deploy.html
+├── scripts/
+│   └── script.js
+├── data/
+│   └── femme-units.json
+├── assets/
+│   └── ... (logos, icons, images)
+
+
+---
+
+✅ FIX COMMANDS (DO THIS ON REPLIT)
+
+1. 🛠 Create Pages
+
+For each of the key folders (like vault-light), do:
+
+Open vault-light
+
+Copy all HTML into new file vault.html
+
+Paste full page structure, remove anything that’s just visual placeholder
+
+
+Do this for:
+
+vault.html
+checkout.html
+builder.html
+ledger.html
+studio.html
+deploy.html
+
+
+---
+
+2. 🔁 Inject Logic into All Pages
+
+At the bottom of each page, add:
+
+<script src="scripts/script.js"></script>
+
+Make sure script.js contains this (if not already):
+
+window.onload = () => {
+  console.log("Ghostframe active");
+  // Add anything like: Ghostframe.loadUnits(), etc.
+};
+
+
+---
+
+3. 🧭 Add Navbar or Button Navigation
+
+In every page (top or bottom), add:
+
+<nav style="padding:1rem;">
+  <a href="index.html">Home</a> |
+  <a href="vault.html">Vault</a> |
+  <a href="studio.html">Studio</a> |
+  <a href="builder.html">Builder</a> |
+  <a href="checkout.html">Checkout</a>
+</nav>
+
+
+---
+
+4. 🧪 Test It
+
+Hit Run
+
+Open:
+https://yourproject.repl.co/vault.html
+.../checkout.html
+etc.
+
+
+
+---
+
+🧠 Optional Enhancements
+
+Add femme-units.json and load via JS into vault
+
+Create "Deploy" buttons that log to console or trigger alerts
+
+Later, link pages with parameters (e.g., /unit?id=23)
+
+
+
+---
+
+✅ Summary Commands
+
+1. Rename static folders to .html pages
+
+
+2. Paste logic & inject script.js
+
+
+3. Add <nav> or buttons to switch
+
+
+4. Upload to Replit
+
+
+5. Hit Run — you’ll now have a fully working, interactive WUPTV skeleton
+
+
+
+
+---
+
+Say nx: vault.html if you want me to send a full working version of one page to start with.
+
