@@ -1,143 +1,154 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WUPTV Builder | Create Your Units</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: "Inter", sans-serif;
-            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-            color: #f2f2f2;
-            min-height: 100vh;
-        }
-        nav {
-            background: rgba(217, 76, 255, 0.1);
-            padding: 1rem;
-            text-align: center;
-            border-bottom: 2px solid #d94cff;
-        }
-        nav a {
-            color: #d94cff;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #ff70ff;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-family: "Orbitron", sans-serif;
-            background: linear-gradient(90deg, #d94cff, #ff70ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .builder-interface {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #333;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-top: 2rem;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        label {
-            display: block;
-            color: #d94cff;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #555;
-            border-radius: 8px;
-            color: #f2f2f2;
-            font-size: 1rem;
-        }
-        .build-button {
-            background: #d94cff;
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            width: 100%;
-            margin-top: 1rem;
-        }
-        .build-button:hover {
-            background: #ff70ff;
-            transform: scale(1.02);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            margin-top: 3rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WUPTV Builder | Create Your Units</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(135deg, #ffffff, #f9f9ff);
+      color: #111;
+      min-height: 100vh;
+    }
+
+    nav {
+      background: rgba(217, 76, 255, 0.1);
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid #d94cff;
+    }
+
+    nav a {
+      color: #d94cff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff70ff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-family: "Orbitron", sans-serif;
+      background: linear-gradient(90deg, #d94cff, #ff70ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .builder-interface {
+      background: #f7f7f7;
+      border: 1px solid #ccc;
+      padding: 2rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      color: #d94cff;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      color: #111;
+      font-size: 1rem;
+    }
+
+    .build-button {
+      background: #d94cff;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .build-button:hover {
+      background: #ff70ff;
+      transform: scale(1.02);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="vault.html">Vault</a> |
-        <a href="studio.html">Studio</a> |
-        <a href="builder.html">Builder</a> |
-        <a href="checkout.html">Checkout</a> |
-        <a href="ledger.html">Ledger</a> |
-        <a href="deploy.html">Deploy</a>
-    </nav>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="vault.html">Vault</a> |
+    <a href="studio.html">Studio</a> |
+    <a href="builder.html">Builder</a> |
+    <a href="checkout.html">Checkout</a> |
+    <a href="ledger.html">Ledger</a> |
+    <a href="deploy.html">Deploy</a>
+  </nav>
 
-    <div class="container">
-        <h1>Unit Builder</h1>
-        <p style="text-align: center; font-size: 1.2rem; color: #ccc;">Create your custom femme units</p>
+  <div class="container">
+    <h1>Unit Builder</h1>
+    <p style="text-align: center; font-size: 1.2rem; color: #555;">Create your custom femme units</p>
 
-        <div class="builder-interface">
-            <div class="form-group">
-                <label for="unitName">Unit Name</label>
-                <input type="text" id="unitName" placeholder="Enter unit name">
-            </div>
-            <div class="form-group">
-                <label for="unitType">Unit Type</label>
-                <select id="unitType">
-                    <option value="intro">Intro</option>
-                    <option value="outro">Outro</option>
-                    <option value="transition">Transition</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="auraLevel">Aura Level</label>
-                <select id="auraLevel">
-                    <option value="soft-glow">Soft Glow</option>
-                    <option value="bright-pulse">Bright Pulse</option>
-                    <option value="neon-flash">Neon Flash</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" rows="4" placeholder="Describe your unit..."></textarea>
-            </div>
-            <button class="build-button" onclick="buildUnit()">Build Unit</button>
-        </div>
+    <div class="builder-interface">
+      <div class="form-group">
+        <label for="unitName">Unit Name</label>
+        <input type="text" id="unitName" placeholder="Enter unit name" />
+      </div>
+      <div class="form-group">
+        <label for="unitType">Unit Type</label>
+        <select id="unitType">
+          <option value="intro">Intro</option>
+          <option value="outro">Outro</option>
+          <option value="transition">Transition</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="auraLevel">Aura Level</label>
+        <select id="auraLevel">
+          <option value="soft-glow">Soft Glow</option>
+          <option value="bright-pulse">Bright Pulse</option>
+          <option value="neon-flash">Neon Flash</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" rows="4" placeholder="Describe your unit..."></textarea>
+      </div>
+      <button class="build-button" onclick="buildUnit()">Build Unit</button>
     </div>
+  </div>
 
-    <footer>© 2025 WUPTV. All rights reserved.</footer>
-    <script src="scripts/script.js"></script>
+  <footer>© 2025 WUPTV. All rights reserved.</footer>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
