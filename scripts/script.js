@@ -22,7 +22,7 @@ const Ghostframe = {
       // Fallback with demo units
       Ghostframe.renderVault([
         {name: "Pulse Vixen", aura: "Soft Glow", tier: "basic"},
-        {name: "Neon Goddess", aura: "Bright Pulse", tier: "myth"},
+        {name: "Neon Unit", aura: "Bright Pulse", tier: "myth"},
         {name: "Crystal Femme", aura: "Neon Flash", tier: "basic"}
       ]);
     }
