@@ -32,6 +32,7 @@
       text-decoration: none;
       margin: 0 1rem;
       font-weight: 600;
+      font-size: 1rem;
       transition: color 0.3s ease;
     }
 
@@ -45,7 +46,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 5rem 2rem 3rem;
+      padding: 5rem 2rem;
       background: linear-gradient(to right, #fff0ff, #ffffff);
     }
 
@@ -81,14 +82,12 @@
       background-color: #ff70ff;
     }
 
-    .unit-grid {
+    #vault {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
       padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
     }
 
     .unit {
@@ -97,6 +96,7 @@
       padding: 2rem;
       border-radius: 15px;
       max-width: 300px;
+      width: 100%;
       text-align: center;
       transition: all 0.3s ease;
       filter: none !important;
@@ -109,6 +109,17 @@
       box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
     }
 
+    .unit.basic {
+      background: #eeeeee;
+    }
+
+    .unit.myth {
+      background: linear-gradient(45deg, #6e00ff, #ff0099);
+      color: #fff;
+      border: 2px solid #d94cff;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    }
+
     .unit h3 {
       color: #d94cff;
       margin-bottom: 1rem;
@@ -118,13 +129,7 @@
     .unit p {
       color: #555;
       line-height: 1.6;
-    }
-
-    .unit.myth {
-      background: linear-gradient(45deg, #6e00ff, #ff0099);
-      color: #fff;
-      border: 2px solid #d94cff;
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+      font-size: 1rem;
     }
 
     footer {
@@ -155,19 +160,8 @@
     <a href="/connect" class="button">Get Started</a>
   </section>
 
-  <div class="unit-grid">
-    <div class="unit basic">
-      <h3>PULSE VIXEN</h3>
-      <p>Short-form intros designed to ignite presence on screen. Loop-ready, high-aura engagement for creators on the rise.</p>
-    </div>
-    <div class="unit basic">
-      <h3>NEON CURVE</h3>
-      <p>Signature outro format with glowing overlays. Soft-lit trails and feminine energy for smooth scene exits.</p>
-    </div>
-    <div class="unit myth">
-      <h3>MYTH LOCK</h3>
-      <p>Elite tier assets available by invite only. Used by legends, archived in the vault. Mythical by design.</p>
-    </div>
+  <div id="vault">
+    <!-- Femme units injected here -->
   </div>
 
   <footer>© 2025 WUPTV. All rights reserved.</footer>
