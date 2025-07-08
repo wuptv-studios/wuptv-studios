@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WUPTV | Attraction Starts With Presence</title>
+  <title>WUPTV Hero | Femme Ad Platform</title>
+  <meta property="og:title" content="WUPTV Hero | Femme Ad Platform" />
+  <meta name="description" content="Join WUPTV's Femme Unit platform — stream-ready, studio-backed, monetized intros and outros for creators. Deploy premium digital ads now." />
+  <meta property="og:description" content="Join WUPTV's Femme Unit platform — stream-ready, studio-backed, monetized intros and outros for creators. Deploy premium digital ads now." />
+  <meta property="og:type" content="website" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta name="robots" content="noindex, nofollow" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
+
   <style>
     body {
       margin: 0;
       font-family: "Inter", sans-serif;
-      background: linear-gradient(135deg, #ffffff, #f9f9ff);
+      background-color: #fff;
       color: #111;
-      min-height: 100vh;
     }
 
     nav {
@@ -34,28 +40,45 @@
     }
 
     .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 5rem 2rem 3rem;
+      background: linear-gradient(to right, #fff0ff, #ffffff);
     }
 
     h1 {
       font-size: 3rem;
       font-family: "Orbitron", sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
       background: linear-gradient(90deg, #d94cff, #ff70ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
     }
 
-    .tagline {
+    p {
       font-size: 1.2rem;
-      color: #555;
+      color: #333;
+      max-width: 600px;
+      margin-bottom: 2rem;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
+    a.button {
+      background-color: #d94cff;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #ff70ff;
     }
 
     .unit-grid {
@@ -63,39 +86,52 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .unit-box {
-      background: #ffffff;
+    .unit {
+      background-color: #f7f7f7;
       border: 1px solid #ccc;
       padding: 2rem;
       border-radius: 15px;
       max-width: 300px;
       text-align: center;
       transition: all 0.3s ease;
+      filter: none !important;
+      backdrop-filter: none !important;
+      opacity: 1 !important;
     }
 
-    .unit-box:hover {
+    .unit:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
     }
 
-    .unit-box h3 {
+    .unit h3 {
       color: #d94cff;
       margin-bottom: 1rem;
       font-size: 1.5rem;
     }
 
-    .unit-box p {
+    .unit p {
       color: #555;
       line-height: 1.6;
+    }
+
+    .unit.myth {
+      background: linear-gradient(45deg, #6e00ff, #ff0099);
+      color: #fff;
+      border: 2px solid #d94cff;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     }
 
     footer {
       text-align: center;
       padding: 2rem;
+      font-size: 0.75rem;
       color: #888;
-      margin-top: 3rem;
     }
   </style>
 </head>
@@ -110,28 +146,32 @@
     <a href="deploy.html">Deploy</a>
   </nav>
 
-  <div class="hero">
+  <section class="hero">
     <h1>Attraction Starts With Presence</h1>
-    <p class="tagline">Your gateway to premium creator units</p>
-  </div>
+    <p>
+      WUPTV delivers high-impact intros built by elite Femme Units.
+      Studio-produced. Creator-owned. Stream-ready assets that stand out.
+    </p>
+    <a href="/connect" class="button">Get Started</a>
+  </section>
 
-  <div class="container">
-    <div class="unit-grid">
-      <div class="unit-box">
-        <h3>PULSE VIXEN</h3>
-        <p>Short-form intros designed to ignite presence on screen. Loop-ready, high-aura engagement for creators on the rise.</p>
-      </div>
-      <div class="unit-box">
-        <h3>NEON CURVE</h3>
-        <p>Signature outro format with glowing overlays. Soft-lit trails and feminine energy for smooth scene exits.</p>
-      </div>
-      <div class="unit-box">
-        <h3>MYTH LOCK</h3>
-        <p>Elite tier assets available by invite only. Used by legends, archived in the vault. Mythical by design.</p>
-      </div>
+  <div class="unit-grid">
+    <div class="unit basic">
+      <h3>PULSE VIXEN</h3>
+      <p>Short-form intros designed to ignite presence on screen. Loop-ready, high-aura engagement for creators on the rise.</p>
+    </div>
+    <div class="unit basic">
+      <h3>NEON CURVE</h3>
+      <p>Signature outro format with glowing overlays. Soft-lit trails and feminine energy for smooth scene exits.</p>
+    </div>
+    <div class="unit myth">
+      <h3>MYTH LOCK</h3>
+      <p>Elite tier assets available by invite only. Used by legends, archived in the vault. Mythical by design.</p>
     </div>
   </div>
 
   <footer>© 2025 WUPTV. All rights reserved.</footer>
+
+  <script src="scripts/script.js"></script>
 </body>
 </html>
