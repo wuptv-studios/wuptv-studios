@@ -1,125 +1,124 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WUPTV Studio | Creator Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: "Inter", sans-serif;
-            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-            color: #f2f2f2;
-            min-height: 100vh;
-        }
-        nav {
-            background: rgba(217, 76, 255, 0.1);
-            padding: 1rem;
-            text-align: center;
-            border-bottom: 2px solid #d94cff;
-        }
-        nav a {
-            color: #d94cff;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #ff70ff;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-family: "Orbitron", sans-serif;
-            background: linear-gradient(90deg, #d94cff, #ff70ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .studio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        .studio-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #333;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .studio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(217, 76, 255, 0.2);
-        }
-        .apply-button {
-            background: #d94cff;
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-        .apply-button:hover {
-            background: #ff70ff;
-            transform: scale(1.05);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            margin-top: 3rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WUPTV Studio | Creator Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(135deg, #ffffff, #f9f9ff);
+      color: #111;
+      min-height: 100vh;
+    }
+    nav {
+      background: rgba(217, 76, 255, 0.1);
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid #d94cff;
+    }
+    nav a {
+      color: #d94cff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ff70ff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-family: "Orbitron", sans-serif;
+      background: linear-gradient(90deg, #d94cff, #ff70ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .studio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .studio-card {
+      background: #f7f7f7;
+      border: 1px solid #ccc;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .studio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
+    }
+    .apply-button {
+      background: #d94cff;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    .apply-button:hover {
+      background: #ff70ff;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="vault.html">Vault</a> |
-        <a href="studio.html">Studio</a> |
-        <a href="builder.html">Builder</a> |
-        <a href="checkout.html">Checkout</a> |
-        <a href="ledger.html">Ledger</a> |
-        <a href="deploy.html">Deploy</a>
-    </nav>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="vault.html">Vault</a> |
+    <a href="studio.html">Studio</a> |
+    <a href="builder.html">Builder</a> |
+    <a href="checkout.html">Checkout</a> |
+    <a href="ledger.html">Ledger</a> |
+    <a href="deploy.html">Deploy</a>
+  </nav>
 
-    <div class="container">
-        <h1>WUPTV Studio</h1>
-        <p style="text-align: center; font-size: 1.2rem; color: #ccc;">Join the elite creator network</p>
+  <div class="container">
+    <h1>WUPTV Studio</h1>
+    <p style="text-align: center; font-size: 1.2rem; color: #555;">Join the elite creator network</p>
 
-        <div class="studio-grid">
-            <div class="studio-card">
-                <h3 style="color: #d94cff;">Femme Unit Creator</h3>
-                <p>Create premium intro/outro units for the platform</p>
-                <button class="apply-button" onclick="applyStudio('creator')">Apply Now</button>
-            </div>
-            <div class="studio-card">
-                <h3 style="color: #00ffe0;">Brand Partner</h3>
-                <p>Partner with WUPTV for exclusive ad placements</p>
-                <button class="apply-button" onclick="applyStudio('partner')">Partner With Us</button>
-            </div>
-            <div class="studio-card">
-                <h3 style="color: #ff9500;">Studio Access</h3>
-                <p>Get access to professional production tools</p>
-                <button class="apply-button" onclick="applyStudio('studio')">Request Access</button>
-            </div>
-        </div>
+    <div class="studio-grid">
+      <div class="studio-card">
+        <h3 style="color: #d94cff;">Femme Unit Creator</h3>
+        <p>Create premium intro/outro units for the platform</p>
+        <button class="apply-button" onclick="applyStudio('creator')">Apply Now</button>
+      </div>
+      <div class="studio-card">
+        <h3 style="color: #00bfa6;">Brand Partner</h3>
+        <p>Partner with WUPTV for exclusive ad placements</p>
+        <button class="apply-button" onclick="applyStudio('partner')">Partner With Us</button>
+      </div>
+      <div class="studio-card">
+        <h3 style="color: #ff9500;">Studio Access</h3>
+        <p>Get access to professional production tools</p>
+        <button class="apply-button" onclick="applyStudio('studio')">Request Access</button>
+      </div>
     </div>
+  </div>
 
-    <footer>© 2025 WUPTV. All rights reserved.</footer>
-    <script src="scripts/script.js"></script>
+  <footer>© 2025 WUPTV. All rights reserved.</footer>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
