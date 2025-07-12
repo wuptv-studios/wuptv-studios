@@ -22,21 +22,27 @@
 
     nav {
       background: rgba(217, 76, 255, 0.1);
-      padding: 1rem;
+      padding: 0.5rem 1rem;
       border-bottom: 2px solid #d94cff;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 70px;
+      position: relative;
     }
 
     .logo {
       height: 100px;
-      margin-left: 1rem;
+      position: absolute;
+      top: -15px;
+      left: 1rem;
+      z-index: 2;
     }
 
     .nav-links {
-      text-align: center;
       flex: 1;
+      text-align: center;
+      z-index: 1;
     }
 
     .nav-links a {
