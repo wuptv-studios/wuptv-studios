@@ -9,17 +9,18 @@
     body {
       margin: 0;
       font-family: "Inter", sans-serif;
-      background: linear-gradient(180deg, #ffffff 0%, #fef9ff 100%);
-      color: #222;
-      position: relative;
+      background: url('assets/images/studio-bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
       overflow-x: hidden;
+      position: relative;
     }
 
     .click-aura {
       position: absolute;
       width: 80px;
       height: 80px;
-      background: radial-gradient(circle, rgba(0,183,255,0.4) 0%, rgba(255,255,255,0) 70%);
+      background: radial-gradient(circle, rgba(0,183,255,0.6) 0%, rgba(0,0,0,0) 70%);
       border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
@@ -36,14 +37,14 @@
       100% {
         transform: translate(-50%, -50%) scale(2.5);
         opacity: 0;
-        filter: blur(8px);
+        filter: blur(12px);
       }
     }
 
     nav {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid #eee;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
@@ -55,7 +56,7 @@
     }
 
     .nav-right a {
-      color: #d94cff;
+      color: #ff70ff;
       margin-left: 1.5rem;
       text-decoration: none;
       font-weight: 600;
@@ -63,7 +64,7 @@
     }
 
     .nav-right a:hover {
-      color: #ff76ff;
+      color: #ffffff;
     }
 
     .hero {
@@ -74,16 +75,14 @@
     h1 {
       font-size: 3rem;
       font-family: "Orbitron", sans-serif;
-      background: linear-gradient(90deg, #d94cff, #ff70ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ff3fff;
       margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 500;
-      color: #666;
+      color: #ddd;
       margin-bottom: 2rem;
     }
 
@@ -101,36 +100,36 @@
     }
 
     .unit {
-      background: #ffffff;
-      border: 1px solid #ddd;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(6px);
       border-radius: 15px;
       padding: 2rem;
       width: 280px;
       text-align: center;
-      box-shadow: 0 4px 14px rgba(217, 76, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       transition: transform 0.3s ease;
     }
 
     .unit:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
+      box-shadow: 0 8px 24px rgba(217, 76, 255, 0.2);
     }
 
     .unit h3 {
-      color: #d94cff;
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
+      color: #ff70ff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .unit p {
-      color: #444;
+      color: #ccc;
       font-size: 0.95rem;
       line-height: 1.5;
     }
 
     footer {
       text-align: center;
-      color: #888;
+      color: #aaa;
       font-size: 0.8rem;
       margin: 4rem 0 2rem;
     }
@@ -159,7 +158,7 @@
 
   <div class="vault-container">
     <div id="vault">
-      <!-- Units injected here -->
+      <!-- Femme units injected here -->
     </div>
   </div>
 
