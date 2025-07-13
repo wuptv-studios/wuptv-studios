@@ -2,197 +2,209 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Femme Unit Vault | WUPTV</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      font-family: "Inter", sans-serif;
-      background: url('assets/images/studio-light-bg.png') no-repeat center center fixed;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('assets/images/studio-bg-light.png') no-repeat center center fixed;
       background-size: cover;
-      color: #111;
-      position: relative;
+      backdrop-filter: brightness(1.02);
+      -webkit-backdrop-filter: brightness(1.02);
+      color: #000;
     }
 
-    /* Glassy nav */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.7);
-      border-bottom: 1px solid #eee;
-      padding: 0.6rem 1.5rem;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 12px;
+      padding: 12px 24px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 999;
+      gap: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-weight: 500;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #c700ff;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .logo {
-      height: 45px;
+      position: absolute;
+      top: 20px;
+      left: 32px;
+      font-family: 'Times New Roman', serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #7a5c39;
     }
 
-    .nav-links a {
-      color: #d94cff;
-      text-decoration: none;
-      margin: 0 0.8rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: #ff70ff;
-    }
-
-    .hero {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       text-align: center;
-      padding: 6rem 2rem 3rem;
+      padding: 100px 16px 60px;
     }
 
     h1 {
-      font-size: 2.8rem;
-      font-family: "Orbitron", sans-serif;
-      background: linear-gradient(90deg, #d94cff, #ff70ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 48px;
+      color: #e600ff;
+      margin-bottom: 8px;
     }
 
-    .vault-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem 4rem;
+    p.subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 60px;
     }
 
-    #vault {
+    .cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 24px;
+      max-width: 1000px;
     }
 
-    .unit {
-      background-color: rgba(255, 255, 255, 0.85);
-      border: 1px solid #ccc;
-      padding: 1.5rem;
-      border-radius: 15px;
-      max-width: 300px;
-      text-align: center;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    .card {
+      background: rgba(255,255,255,0.75);
+      border-radius: 16px;
+      padding: 24px;
+      width: 280px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       cursor: pointer;
-      overflow: hidden;
+      border: 1px solid #f0f0f0;
     }
 
-    .unit:hover {
-      transform: translateY(-5px);
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(199, 0, 255, 0.1);
     }
 
-    .unit.myth {
-      background: linear-gradient(45deg, #6e00ff, #ff0099);
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(199,0,255,0.3) 0%, transparent 80%);
+      opacity: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover::after {
+      opacity: 1;
+    }
+
+    .card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 20px;
+      color: #c700ff;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .card.frost {
+      background: linear-gradient(135deg, #9c00ff, #ff00aa);
       color: #fff;
-      border: 2px solid #d94cff;
     }
 
-    .unit h3 {
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-      color: #d94cff;
-    }
-
-    .unit p {
-      color: #555;
-      font-size: 1rem;
+    .card.frost h2,
+    .card.frost p {
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
-      color: #888;
-      font-size: 0.8rem;
+      font-size: 14px;
+      color: #777;
+      margin-top: 80px;
     }
 
-    /* Spark Animation */
-    .spark {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: #00b3ff;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: sparkFade 1s ease-out forwards;
-      pointer-events: none;
-    }
-
-    @keyframes sparkFade {
-      0% {
-        transform: scale(1) translate(0, 0);
-        opacity: 0.9;
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 8px 16px;
       }
-      100% {
-        transform: scale(4) translate(-10px, -10px);
-        opacity: 0;
+
+      .card {
+        width: 90%;
+      }
+
+      h1 {
+        font-size: 36px;
       }
     }
   </style>
 </head>
 <body>
 
+  <div class="logo">WUPTV<br><span style="font-size:10px;">STUDIOS</span></div>
+
   <nav>
-    <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Logo" class="logo" />
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="vault.html">Vault</a>
-      <a href="studio.html">Studio</a>
-      <a href="builder.html">Builder</a>
-      <a href="checkout.html">Checkout</a>
-      <a href="ledger.html">Ledger</a>
-      <a href="deploy.html">Deploy</a>
-    </div>
+    <a href="#">Home</a>
+    <a href="#">Vault</a>
+    <a href="#">Studio</a>
+    <a href="#">Builder</a>
+    <a href="#">Checkout</a>
+    <a href="#">Ledger</a>
+    <a href="#">Deploy</a>
   </nav>
 
-  <div class="hero">
+  <div class="container">
     <h1>Femme Unit Vault</h1>
-    <p>Exclusive units for premium creators</p>
-  </div>
+    <p class="subtitle">Exclusive units for premium creators</p>
 
-  <div class="vault-container">
-    <div id="vault">
-      <!-- Units will be injected dynamically -->
-      <div class="unit" onclick="spawnSpark(event)">
-        <h3>Mythic Nyra</h3>
+    <div class="cards">
+      <div class="card">
+        <h2>Mythic Nyra</h2>
         <p>Elite intro visuals for high-end creators</p>
       </div>
-      <div class="unit basic" onclick="spawnSpark(event)">
-        <h3>Studio Softlight</h3>
+      <div class="card">
+        <h2>Studio Softlight</h2>
         <p>Clean, light-crafted intros for smooth flow</p>
       </div>
-      <div class="unit myth" onclick="spawnSpark(event)">
-        <h3>Frost Flare</h3>
+      <div class="card frost">
+        <h2>Frost Flare</h2>
         <p>Intense, icy transitions for power scenes</p>
       </div>
     </div>
+
+    <footer>© 2025 <strong>WUPTV</strong>. All rights reserved.</footer>
   </div>
 
-  <footer>© 2025 WUPTV. All rights reserved.</footer>
-
-  <script>
-    function spawnSpark(e) {
-      const spark = document.createElement("div");
-      spark.className = "spark";
-      document.body.appendChild(spark);
-      const x = e.pageX;
-      const y = e.pageY;
-      spark.style.left = x + "px";
-      spark.style.top = y + "px";
-      setTimeout(() => spark.remove(), 1000);
-    }
-  </script>
 </body>
 </html>
