@@ -1,145 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WUPTV Vault | Femme Units</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: linear-gradient(to bottom right, #fff0fb, #f4eafd);
-      color: #111;
-      min-height: 100vh;
-      background-image: url('assets/images/studio-backdrop-faint.png'); /* optional */
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    nav {
-      background: rgba(217, 76, 255, 0.1);
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 2px solid #d94cff;
-    }
-
-    nav a {
-      color: #d94cff;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ff70ff;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 3rem 2rem 2rem;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      font-family: "Cinzel", serif;
-      background: linear-gradient(90deg, #d94cff, #ff70ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero p {
-      color: #555;
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .vault-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    #vault {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .unit {
-      background-color: #fdfbff;
-      border: 1px solid #f0d4fb;
-      padding: 2rem;
-      border-radius: 18px;
-      max-width: 280px;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 24px rgba(217, 76, 255, 0.1);
-    }
-
-    .unit:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 32px rgba(217, 76, 255, 0.15);
-    }
-
-    .unit.myth {
-      background: linear-gradient(135deg, #6e00ff, #ff0099);
-      color: #fff;
-      border: 2px solid #d94cff;
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .unit.basic {
-      background: #faf7fc;
-    }
-
-    .unit h3 {
-      color: #d94cff;
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-    }
-
-    .unit p {
-      color: #666;
-      line-height: 1.5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #888;
-      font-size: 0.75rem;
-      margin-top: 3rem;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="vault.html">Vault</a> |
-    <a href="studio.html">Studio</a> |
-    <a href="builder.html">Builder</a> |
-    <a href="checkout.html">Checkout</a> |
-    <a href="ledger.html">Ledger</a> |
+<!-- SYSTEM NAV BAR -->
+<nav class="nav-glass">
+  <div class="nav-container">
+    <a href="index.html">Home</a>
+    <a href="vault.html">Vault</a>
+    <a href="studio.html">Studio</a>
+    <a href="builder.html">Builder</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="ledger.html">Ledger</a>
     <a href="deploy.html">Deploy</a>
-  </nav>
-
-  <div class="hero">
-    <h1>Femme Unit Vault</h1>
-    <p>Exclusive units for premium creators. Select your vibe.</p>
   </div>
+</nav>
 
-  <div class="vault-container">
-    <div id="vault">
-      <!-- Units will be loaded here by Ghostframe -->
-    </div>
-  </div>
+<style>
+  .nav-glass {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 240, 255, 0.7);
+    border-bottom: 1.5px solid #f3bfff;
+    z-index: 1000;
+  }
 
-  <footer>© 2025 WUPTV Studios. All rights reserved.</footer>
-  <script src="scripts/script.js"></script>
-</body>
-</html>
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    padding: 0.9rem 1rem;
+    gap: 1.4rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .nav-container a {
+    color: #d94cff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-container a:hover {
+    color: #ff70ff;
+  }
+
+  body {
+    padding-top: 70px; /* prevent nav overlap */
+  }
+</style>
