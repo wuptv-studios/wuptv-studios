@@ -2,132 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Femme Unit Vault | WUPTV Studios</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Femme Unit Vault | WUPTV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      background: url('./assets/images/vault-light-glow-bg.png') no-repeat center center fixed;
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: url('assets/images/studio-light-bg.png') no-repeat center center fixed;
       background-size: cover;
-      color: white;
-      min-height: 100vh;
+      color: #111;
       position: relative;
-      overflow-x: hidden;
     }
 
+    /* Glassy nav */
     nav {
-      backdrop-filter: blur(18px) saturate(120%);
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 16px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border-bottom: 1px solid #eee;
+      padding: 0.6rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 32px;
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 92%;
-      max-width: 1100px;
       z-index: 999;
     }
 
-    nav .logo {
-      font-family: 'Georgia', serif;
-      font-weight: 500;
-      font-size: 18px;
-      color: #d4a373;
+    .logo {
+      height: 45px;
     }
 
-    nav .nav-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    nav .nav-links a {
-      color: #444;
-      font-weight: 500;
+    .nav-links a {
+      color: #d94cff;
       text-decoration: none;
-      font-size: 14px;
-      transition: all 0.3s ease;
+      margin: 0 0.8rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
     }
 
-    nav .nav-links a:hover {
-      color: #ff29e0;
+    .nav-links a:hover {
+      color: #ff70ff;
     }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    .hero {
       text-align: center;
-      padding-top: 80px;
+      padding: 6rem 2rem 3rem;
     }
 
     h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 52px;
-      color: #ff29e0;
-      text-shadow: 0 0 10px #ff29e0, 0 0 20px #ff29e0;
+      font-size: 2.8rem;
+      font-family: "Orbitron", sans-serif;
+      background: linear-gradient(90deg, #d94cff, #ff70ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
     }
 
-    p.subtext {
-      font-size: 18px;
+    .vault-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem 4rem;
+    }
+
+    #vault {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .unit {
+      background-color: rgba(255, 255, 255, 0.85);
+      border: 1px solid #ccc;
+      padding: 1.5rem;
+      border-radius: 15px;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .unit:hover {
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
+    }
+
+    .unit.myth {
+      background: linear-gradient(45deg, #6e00ff, #ff0099);
       color: #fff;
-      margin-top: 14px;
-      font-weight: 400;
-      text-shadow: 0 0 5px #00000080;
+      border: 2px solid #d94cff;
+    }
+
+    .unit h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #d94cff;
+    }
+
+    .unit p {
+      color: #555;
+      font-size: 1rem;
     }
 
     footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
       text-align: center;
-      font-size: 14px;
-      color: #e0e0e0;
-      text-shadow: 0 0 4px #00000099;
+      padding: 2rem;
+      color: #888;
+      font-size: 0.8rem;
     }
 
-    /* Click aura effect */
-    .aura {
+    /* Spark Animation */
+    .spark {
       position: absolute;
-      width: 60px;
-      height: 60px;
+      width: 10px;
+      height: 10px;
+      background: #00b3ff;
       border-radius: 50%;
-      background: radial-gradient(circle, #00c8ff88, transparent 70%);
+      opacity: 0.8;
+      animation: sparkFade 1s ease-out forwards;
       pointer-events: none;
-      animation: fadeOut 1.2s ease-out forwards;
-      z-index: 1000;
     }
 
-    @keyframes fadeOut {
+    @keyframes sparkFade {
       0% {
-        opacity: 0.8;
-        transform: scale(0.5);
+        transform: scale(1) translate(0, 0);
+        opacity: 0.9;
       }
       100% {
+        transform: scale(4) translate(-10px, -10px);
         opacity: 0;
-        transform: scale(2.5);
       }
     }
-
   </style>
 </head>
 <body>
 
   <nav>
-    <div class="logo">WUPTV<br><span style="font-size:10px; letter-spacing:1px;">STUDIOS</span></div>
+    <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Logo" class="logo" />
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="vault.html">Vault</a>
@@ -139,25 +157,42 @@
     </div>
   </nav>
 
-  <div class="container" onclick="triggerAura(event)">
+  <div class="hero">
     <h1>Femme Unit Vault</h1>
-    <p class="subtext">Exclusive drops for creators with presence.</p>
+    <p>Exclusive units for premium creators</p>
   </div>
 
-  <footer>
-    © 2025 WUPTV. All rights reserved.
-  </footer>
+  <div class="vault-container">
+    <div id="vault">
+      <!-- Units will be injected dynamically -->
+      <div class="unit" onclick="spawnSpark(event)">
+        <h3>Mythic Nyra</h3>
+        <p>Elite intro visuals for high-end creators</p>
+      </div>
+      <div class="unit basic" onclick="spawnSpark(event)">
+        <h3>Studio Softlight</h3>
+        <p>Clean, light-crafted intros for smooth flow</p>
+      </div>
+      <div class="unit myth" onclick="spawnSpark(event)">
+        <h3>Frost Flare</h3>
+        <p>Intense, icy transitions for power scenes</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 WUPTV. All rights reserved.</footer>
 
   <script>
-    function triggerAura(e) {
-      const aura = document.createElement('div');
-      aura.classList.add('aura');
-      aura.style.left = `${e.pageX - 30}px`;
-      aura.style.top = `${e.pageY - 30}px`;
-      document.body.appendChild(aura);
-      setTimeout(() => aura.remove(), 1200);
+    function spawnSpark(e) {
+      const spark = document.createElement("div");
+      spark.className = "spark";
+      document.body.appendChild(spark);
+      const x = e.pageX;
+      const y = e.pageY;
+      spark.style.left = x + "px";
+      spark.style.top = y + "px";
+      setTimeout(() => spark.remove(), 1000);
     }
   </script>
-
 </body>
 </html>
