@@ -3,64 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WUPTV Vault | Femme Units</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
+  <title>Femme Unit Vault | WUPTV Studios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@500;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: "Inter", sans-serif;
-      background: url("assets/images/studio-bg-light.png") no-repeat center center;
-      background-size: cover;
-      color: #111;
+      font-family: 'Inter', sans-serif;
+      background: url("assets/images/studio-bg-light.png") no-repeat center center / cover;
+      position: relative;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 0;
     }
 
     nav {
-      background: rgba(255, 255, 255, 0.75);
-      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      backdrop-filter: blur(12px);
-      border-bottom: 2px solid #d94cff;
+      align-items: center;
+      padding: 0.5rem 1.5rem;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+      height: 55px;
     }
 
-    nav img.logo {
-      height: 40px;
-    }
-
-    .nav-links a {
-      color: #d94cff;
+    nav a {
       text-decoration: none;
-      margin: 0 1rem;
+      color: #d94cff;
       font-weight: 600;
+      margin: 0 0.75rem;
+      font-size: 0.95rem;
       transition: color 0.3s ease;
     }
 
-    .nav-links a:hover {
+    nav a:hover {
       color: #ff70ff;
     }
 
+    .logo {
+      height: 38px;
+    }
+
     .hero {
+      position: relative;
+      z-index: 2;
       text-align: center;
-      padding: 6rem 2rem 2rem;
+      padding: 5rem 2rem 3rem;
     }
 
     .hero h1 {
+      font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
-      font-family: "Orbitron", sans-serif;
       background: linear-gradient(90deg, #d94cff, #ff70ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      font-weight: 500;
+      font-size: 1.1rem;
       color: #333;
+      margin-top: 0;
+    }
+
+    .vault-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
     }
 
     #vault {
@@ -68,48 +90,79 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      padding: 2rem;
     }
 
     .unit {
-      background-color: #fdfdfd;
+      background: #fff;
       border: 1px solid #ddd;
       padding: 2rem;
-      border-radius: 15px;
+      border-radius: 12px;
       max-width: 300px;
+      width: 100%;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
     }
 
     .unit:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(217, 76, 255, 0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(217, 76, 255, 0.15);
+    }
+
+    .unit.myth {
+      background: linear-gradient(45deg, #6e00ff, #ff0099);
+      color: #fff;
+      border: none;
     }
 
     .unit h3 {
+      font-size: 1.4rem;
       color: #d94cff;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .unit p {
       color: #555;
       font-size: 1rem;
+      line-height: 1.5;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      color: #888;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
+      color: #999;
+      position: relative;
+      z-index: 2;
     }
 
+    /* Firefly aura effect on click */
+    .firefly {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: radial-gradient(circle, #67c7ff, transparent);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: spark 1s ease-out forwards;
+      opacity: 0.7;
+    }
+
+    @keyframes spark {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      100% {
+        transform: scale(3);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
-<body>
+<body onclick="spawnSpark(event)">
   <nav>
-    <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Logo" class="logo" />
-    <div class="nav-links">
+    <img src="assets/images/wuptv-studios-logo.png" class="logo" alt="WUPTV Studios Logo">
+    <div>
       <a href="index.html">Home</a>
       <a href="vault.html">Vault</a>
       <a href="studio.html">Studio</a>
@@ -125,10 +178,23 @@
     <p>Exclusive drops for creators with presence.</p>
   </div>
 
-  <div id="vault">
-    <!-- Units will be injected here by Ghostframe -->
+  <div class="vault-container">
+    <div id="vault">
+      <!-- Dynamic Units go here -->
+    </div>
   </div>
 
   <footer>© 2025 WUPTV. All rights reserved.</footer>
+
+  <script>
+    function spawnSpark(e) {
+      const spark = document.createElement("div");
+      spark.className = "firefly";
+      spark.style.left = e.clientX + "px";
+      spark.style.top = e.clientY + "px";
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 1000);
+    }
+  </script>
 </body>
 </html>
