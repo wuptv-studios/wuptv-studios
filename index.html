@@ -12,13 +12,17 @@
       font-family: 'Inter', sans-serif;
       color: #222;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     .hero {
-      min-height: 100vh;
+      padding-top: 8vh;
+      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       padding: 2rem;
     }
@@ -26,7 +30,7 @@
     .logo {
       width: 360px;
       max-width: 85%;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.8rem;
       animation: fadeIn 2s ease-in-out;
     }
 
@@ -34,7 +38,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       color: #cc38b2;
-      margin-bottom: 2.2rem;
+      margin-bottom: 2rem;
       opacity: 0;
       animation: fadeIn 2s ease-in-out 1s forwards;
     }
@@ -73,6 +77,12 @@
       opacity: 0.85;
     }
 
+    footer {
+      font-size: 0.75rem;
+      color: #888;
+      padding: 1.5rem 0;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -88,5 +98,7 @@
       <a href="vault.html" class="btn-outline">🔓 Explore Vault</a>
     </div>
   </section>
+
+  <footer>© 2025 WUPTV Studios. All rights reserved.</footer>
 </body>
 </html>
