@@ -10,46 +10,42 @@
   <meta property="og:type" content="website" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta name="robots" content="noindex, nofollow" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Playfair+Display:wght@600&family=Inter:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: "Inter", sans-serif;
-      background-color: #fff;
-      color: #111;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #ffffff, #f9f6fc);
+      color: #222;
+      text-align: center;
     }
 
     nav {
-      background: rgba(217, 76, 255, 0.1);
+      background: #fff;
       padding: 0.5rem 1rem;
-      border-bottom: 2px solid #d94cff;
+      font-size: 0.85rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 70px;
-      position: relative;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-bottom: 2px solid #d94cff;
     }
 
     .logo {
       height: 100px;
-      position: absolute;
-      top: -15px;
-      left: 1rem;
-      z-index: 2;
+      margin-top: -15px;
     }
 
     .nav-links {
-      flex: 1;
       text-align: center;
-      z-index: 1;
+      flex: 1;
     }
 
     .nav-links a {
       color: #d94cff;
       text-decoration: none;
       margin: 0 1rem;
-      font-weight: 600;
       font-size: 1rem;
       transition: color 0.3s ease;
     }
@@ -58,134 +54,163 @@
       color: #ff70ff;
     }
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 5rem 2rem;
-      background: linear-gradient(to right, #fff0ff, #ffffff);
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #cc38b2;
+      margin: 5rem 0 1.5rem;
     }
 
-    h1 {
-      font-size: 3rem;
-      font-family: "Orbitron", sans-serif;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #d94cff, #ff70ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: 1px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: #333;
-      max-width: 600px;
-      margin-bottom: 2rem;
-    }
-
-    a.button {
-      background-color: #d94cff;
-      color: #fff;
-      padding: 0.8rem 2rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    a.button:hover {
-      background-color: #ff70ff;
-    }
-
-    #vault {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-    }
-
-    .unit {
-      background-color: #f7f7f7;
-      border: 1px solid #ccc;
-      padding: 2rem;
-      border-radius: 15px;
-      max-width: 300px;
-      width: 100%;
-      text-align: center;
-      transition: all 0.3s ease;
-      filter: none !important;
-      backdrop-filter: none !important;
-      opacity: 1 !important;
-    }
-
-    .unit:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
-    }
-
-    .unit.basic {
-      background: #eeeeee;
-    }
-
-    .unit.myth {
-      background: linear-gradient(45deg, #6e00ff, #ff0099);
-      color: #fff;
-      border: 2px solid #d94cff;
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-    }
-
-    .unit h3 {
-      color: #d94cff;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .unit p {
+    .subtext {
       color: #555;
-      line-height: 1.6;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+
+    .cta a {
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      border-radius: 30px;
       font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ff8bee, #da6ce3);
+      color: white;
+    }
+
+    .btn-outline {
+      border: 2px solid #da6ce3;
+      background: transparent;
+      color: #cc38b2;
+    }
+
+    .btn-outline:hover,
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .glow-dot {
+      width: 10px;
+      height: 10px;
+      margin: 0 auto 3rem;
+      border-radius: 50%;
+      background: #cc38b2;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.8); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .features {
+      background: #f3effa;
+      padding: 3rem 1rem;
+    }
+
+    .features h3 {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .feature-grid {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      width: 160px;
+    }
+
+    .feature span {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
     }
 
     footer {
-      text-align: center;
-      padding: 2rem;
       font-size: 0.75rem;
-      color: #888;
+      color: #666;
+      padding: 2rem 0;
+      background: #f9f9f9;
     }
   </style>
 </head>
 <body>
+
   <nav>
     <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" class="logo" />
     <div class="nav-links">
-      <a href="index.html">Home</a> |
-      <a href="vault.html">Vault</a> |
-      <a href="studio.html">Studio</a> |
-      <a href="builder.html">Builder</a> |
-      <a href="checkout.html">Checkout</a> |
-      <a href="ledger.html">Ledger</a> |
+      <a href="index.html">Home</a>
+      <a href="vault.html">Vault</a>
+      <a href="studio.html">Studio</a>
+      <a href="builder.html">Builder</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="ledger.html">Ledger</a>
       <a href="deploy.html">Deploy</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <h1>Attraction Starts With Presence</h1>
-    <p>
-      WUPTV delivers high-impact intros built by elite Femme Units.
-      Studio-produced. Creator-owned. Stream-ready assets that stand out.
-    </p>
-    <a href="/connect" class="button">Get Started</a>
-  </section>
+  <div class="headline">Attraction<br>Starts With<br>Presence</div>
 
-  <div id="vault">
-    <!-- Femme units injected here -->
+  <div class="subtext">
+    WUPTV delivers high-impact intros built by elite Femme Units.<br>
+    Studio-produced. Creator-owned. Stream-ready assets that stand out.
   </div>
 
-  <footer>© 2025 WUPTV. All rights reserved.</footer>
+  <div class="cta">
+    <a href="/connect" class="btn-primary">💎 Apply as Unit</a>
+    <a href="vault.html" class="btn-outline">🔓 Explore Vault</a>
+  </div>
+
+  <div class="glow-dot"></div>
+
+  <section class="features">
+    <h3>What Makes WUPTV Different</h3>
+    <div class="feature-grid">
+      <div class="feature">
+        <span>📸</span>
+        <p>Content Ownership</p>
+      </div>
+      <div class="feature">
+        <span>🎥</span>
+        <p>Studio Direction</p>
+      </div>
+      <div class="feature">
+        <span>💰</span>
+        <p>Royalties & Reach</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 WUPTV Studios. All rights reserved.
+  </footer>
 
   <script src="scripts/script.js"></script>
 </body>
