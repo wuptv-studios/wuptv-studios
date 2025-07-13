@@ -1,136 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WUPTV Vault | Femme Units</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: "Inter", sans-serif;
-      background: linear-gradient(135deg, #ffffff, #f9f7ff);
+      background: linear-gradient(135deg, #ffffff, #f9f9ff);
       color: #111;
       min-height: 100vh;
-    }
+    }nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 2px solid #f0c0ff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(12px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.7rem 1.5rem;
-      border-bottom: 2px solid #e3b6ff;
-      z-index: 10;
-    }
+.nav-logo {
+  height: 50px;
+}
 
-    .logo {
-      height: 45px;
-    }
+.nav-links a {
+  color: #d94cff;
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+.nav-links a:hover {
+  color: #ff70ff;
+}
 
-    .nav-links a {
-      color: #cc3cf0;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+.hero {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+}
 
-    .nav-links a:hover {
-      color: #ff70ff;
-    }
+h1 {
+  font-size: 3rem;
+  font-family: "Orbitron", sans-serif;
+  background: linear-gradient(90deg, #d94cff, #ff70ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
 
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem 1rem;
-    }
+.hero p {
+  font-size: 1.2rem;
+  color: #333;
+}
 
-    h1 {
-      font-family: "Orbitron", sans-serif;
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, #d94cff, #ff70ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: 1px;
-    }
+.vault-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
 
-    .hero p {
-      font-size: 1.1rem;
-      color: #444;
-      font-weight: 500;
-    }
+#vault {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
 
-    .vault-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
+.unit {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 300px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
 
-    #vault {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
+.unit:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
+}
 
-    .unit {
-      background-color: #f7f7f7;
-      border: 1px solid #ccc;
-      padding: 2rem;
-      border-radius: 15px;
-      max-width: 300px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
+.unit.myth {
+  background: linear-gradient(45deg, #6e00ff, #ff0099);
+  color: #fff;
+  border: 2px solid #d94cff;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
 
-    .unit:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
-    }
+.unit.basic {
+  background: #eeeeee;
+}
 
-    .unit h3 {
-      color: #d94cff;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
+.unit h3 {
+  color: #d94cff;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
 
-    .unit p {
-      color: #555;
-      line-height: 1.6;
-    }
+.unit p {
+  color: #555;
+  line-height: 1.6;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #999;
-      font-size: 0.85rem;
-    }
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+}
 
-    .backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(130deg, rgba(255,255,255,0.3), rgba(255,240,255,0.6));
-      z-index: -1;
-    }
   </style>
-</head>
-<body>
-  <div class="backdrop"></div>
-
+</head><body>
   <nav>
-    <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" class="logo" />
+    <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" class="nav-logo">
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="vault.html">Vault</a>
@@ -140,20 +130,13 @@
       <a href="ledger.html">Ledger</a>
       <a href="deploy.html">Deploy</a>
     </div>
-  </nav>
-
-  <div class="hero">
+  </nav>  <div class="hero">
     <h1>Femme Unit Vault</h1>
     <p>Exclusive drops for creators with presence.</p>
-  </div>
-
-  <div class="vault-container">
+  </div>  <div class="vault-container">
     <div id="vault">
-      <!-- Inject Femme Unit cards here -->
+      <!-- Units will be loaded here by Ghostframe -->
     </div>
-  </div>
-
-  <footer>© 2025 WUPTV. All rights reserved.</footer>
-  <script src="scripts/script.js"></script>
-</body>
-</html>
+  </div>  <footer>
+    © 2025 WUPTV. All rights reserved.
+  </footer>  <script src="scripts/script.js"></script></body></html>
