@@ -1,210 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Femme Unit Vault | WUPTV</title>
+  <title>Femme Unit Vault</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
       background: url('assets/images/studio-bg-light.png') no-repeat center center fixed;
       background-size: cover;
-      backdrop-filter: brightness(1.02);
-      -webkit-backdrop-filter: brightness(1.02);
       color: #000;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 20px;
+      padding: 10px 30px;
+      gap: 30px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+    }
+
+    header img {
+      height: 36px;
+      margin-right: 20px;
     }
 
     nav {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255, 255, 255, 0.4);
-      border-radius: 12px;
-      padding: 12px 24px;
       display: flex;
       gap: 24px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      font-weight: 500;
-      z-index: 1000;
     }
 
     nav a {
-      color: #c700ff;
+      color: #333;
       text-decoration: none;
+      font-weight: 500;
       font-size: 15px;
+      position: relative;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .logo {
+    nav a::after {
+      content: '';
       position: absolute;
-      top: 20px;
-      left: 32px;
-      font-family: 'Times New Roman', serif;
-      font-size: 18px;
-      font-weight: bold;
-      color: #7a5c39;
+      width: 100%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #c700ff;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
 
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       text-align: center;
-      padding: 100px 16px 60px;
+      padding: 160px 20px 60px;
     }
 
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 48px;
       color: #e600ff;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    p.subtitle {
+    .subtitle {
       font-size: 18px;
+      color: #444;
       font-weight: 500;
-      color: #333;
-      margin-bottom: 60px;
     }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      max-width: 1000px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.75);
-      border-radius: 16px;
-      padding: 24px;
-      width: 280px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      cursor: pointer;
-      border: 1px solid #f0f0f0;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 40px rgba(199, 0, 255, 0.1);
-    }
-
-    .card::after {
-      content: "";
+    .sparkle {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 120px;
-      height: 120px;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(199,0,255,0.3) 0%, transparent 80%);
-      opacity: 0;
-      border-radius: 50%;
+      width: 60px;
+      height: 60px;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
+      opacity: 0.6;
+      border-radius: 50%;
+      animation: sparkleFade 0.6s ease-out forwards;
+      z-index: 999;
     }
 
-    .card:hover::after {
-      opacity: 1;
-    }
-
-    .card h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 20px;
-      color: #c700ff;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      font-size: 15px;
-      color: #333;
-      line-height: 1.4;
-    }
-
-    .card.frost {
-      background: linear-gradient(135deg, #9c00ff, #ff00aa);
-      color: #fff;
-    }
-
-    .card.frost h2,
-    .card.frost p {
-      color: #fff;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    @keyframes sparkleFade {
+      0% {
+        transform: scale(0.5);
+        opacity: 0.9;
+      }
+      100% {
+        transform: scale(2.4);
+        opacity: 0;
+      }
     }
 
     footer {
-      text-align: center;
+      margin-top: 80px;
       font-size: 14px;
       color: #777;
-      margin-top: 80px;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-        gap: 12px;
-        padding: 8px 16px;
-      }
-
-      .card {
-        width: 90%;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <div class="logo">WUPTV<br><span style="font-size:10px;">STUDIOS</span></div>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Vault</a>
-    <a href="#">Studio</a>
-    <a href="#">Builder</a>
-    <a href="#">Checkout</a>
-    <a href="#">Ledger</a>
-    <a href="#">Deploy</a>
-  </nav>
+  <header>
+    <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" />
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Vault</a>
+      <a href="#">Studio</a>
+      <a href="#">Builder</a>
+      <a href="#">Checkout</a>
+      <a href="#">Ledger</a>
+      <a href="#">Deploy</a>
+    </nav>
+  </header>
 
   <div class="container">
     <h1>Femme Unit Vault</h1>
-    <p class="subtitle">Exclusive units for premium creators</p>
-
-    <div class="cards">
-      <div class="card">
-        <h2>Mythic Nyra</h2>
-        <p>Elite intro visuals for high-end creators</p>
-      </div>
-      <div class="card">
-        <h2>Studio Softlight</h2>
-        <p>Clean, light-crafted intros for smooth flow</p>
-      </div>
-      <div class="card frost">
-        <h2>Frost Flare</h2>
-        <p>Intense, icy transitions for power scenes</p>
-      </div>
-    </div>
+    <p class="subtitle">Exclusive drops for creators with presence.</p>
 
     <footer>© 2025 <strong>WUPTV</strong>. All rights reserved.</footer>
   </div>
+
+  <script>
+    // Sparkle effect on nav click
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+        sparkle.style.left = `${e.pageX - 30}px`;
+        sparkle.style.top = `${e.pageY - 30}px`;
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 600);
+      });
+    });
+  </script>
 
 </body>
 </html>
