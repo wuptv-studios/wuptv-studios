@@ -14,6 +14,7 @@
       background-size: cover;
       color: #000;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
     .logo-fixed {
@@ -122,14 +123,8 @@
     }
 
     @keyframes sparkleFade {
-      0% {
-        transform: scale(0.5);
-        opacity: 0.9;
-      }
-      100% {
-        transform: scale(2.4);
-        opacity: 0;
-      }
+      0% { transform: scale(0.5); opacity: 0.9; }
+      100% { transform: scale(2.4); opacity: 0; }
     }
 
     footer {
@@ -193,7 +188,6 @@
   </div>
 
   <script>
-    // Sparkle effect on nav click
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', (e) => {
         const sparkle = document.createElement('div');
