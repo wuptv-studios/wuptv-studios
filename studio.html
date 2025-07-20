@@ -2,34 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WUPTV Studio | Creator Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       background: url('assets/images/studio-bg-light.png') no-repeat center center fixed;
       background-size: cover;
       color: #111;
-      min-height: 100vh;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
     .logo-fixed {
       position: fixed;
-      top: -15px;
-      left: -18px;
+      top: -36px;
+      left: 248px;
       height: 160px;
       z-index: 1000;
     }
 
     header {
       position: fixed;
-      top: 38px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 24px;
+      right: 88px;
       display: flex;
       align-items: center;
       background: rgba(255, 255, 255, 0.35);
@@ -38,7 +37,9 @@
       gap: 30px;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 0 12px rgba(199, 0, 255, 0.4), 0 0 24px rgba(199, 0, 255, 0.3), 0 4px 18px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 12px rgba(199, 0, 255, 0.4),
+                  0 0 24px rgba(199, 0, 255, 0.3),
+                  0 4px 18px rgba(0, 0, 0, 0.15);
       z-index: 999;
     }
 
@@ -86,12 +87,22 @@
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 48px;
       font-family: "Orbitron", sans-serif;
-      background: linear-gradient(90deg, #d94cff, #ff70ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #e600ff;
       margin-bottom: 1rem;
+      animation: pulseTitle 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulseTitle {
+      0%, 100% { opacity: 1; text-shadow: 0 0 6px #e600ff; }
+      50% { opacity: 0.85; text-shadow: 0 0 12px #e600ff; }
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #444;
+      font-weight: 500;
     }
 
     .studio-grid {
@@ -139,11 +150,31 @@
       margin-top: 3rem;
     }
 
+    .sparkle {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      pointer-events: none;
+      background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
+      opacity: 0.6;
+      border-radius: 50%;
+      animation: sparkleFade 0.6s ease-out forwards;
+      filter: blur(2px);
+      z-index: 999;
+    }
+
+    @keyframes sparkleFade {
+      0% { transform: scale(0.5); opacity: 0.9; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         padding: 10px 20px;
         gap: 16px;
+        right: 12px;
+        left: auto;
       }
 
       nav {
@@ -158,7 +189,11 @@
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 16px;
       }
     }
   </style>
@@ -181,7 +216,7 @@
 
   <div class="container">
     <h1>WUPTV Studio</h1>
-    <p style="font-size: 1.2rem; color: #555;">Join the elite creator network</p>
+    <p class="subtitle">Join the elite creator network</p>
 
     <div class="studio-grid">
       <div class="studio-card">
@@ -208,6 +243,19 @@
     function applyStudio(type) {
       alert("Applying for: " + type);
     }
+
+    // Sparkle effect on nav click
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+        sparkle.style.left = `${e.pageX - 30}px`;
+        sparkle.style.top = `${e.pageY - 30}px`;
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 600);
+      });
+    });
   </script>
+
 </body>
 </html>
