@@ -2,52 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WUPTV Deploy | Launch Your Units</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600;700&display=swap" rel="stylesheet"/>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      margin: 0;
       font-family: "Inter", sans-serif;
-      background: linear-gradient(135deg, #ffffff, #f0f0f0);
+      background: url('assets/images/studio-bg-light.png') no-repeat center center fixed;
+      background-size: cover;
       color: #111;
       min-height: 100vh;
+      overflow-x: hidden;
     }
+
+    .logo-fixed {
+      position: fixed;
+      top: -36px;
+      left: 248px;
+      height: 160px;
+      z-index: 1000;
+    }
+
+    header {
+      position: fixed;
+      top: 24px;
+      right: 178px;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 20px;
+      padding: 10px 30px;
+      gap: 30px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 0 12px rgba(199, 0, 255, 0.4),
+                  0 0 24px rgba(199, 0, 255, 0.3),
+                  0 4px 18px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+    }
+
     nav {
-      background: rgba(217, 76, 255, 0.05);
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 2px solid #d94cff;
+      display: flex;
+      gap: 24px;
     }
+
     nav a {
-      color: #d94cff;
+      color: #333;
       text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      font-weight: 700;
+      font-size: 15px;
+      position: relative;
+      transition: all 0.2s ease;
     }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #c700ff;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
     nav a:hover {
-      color: #ff70ff;
+      color: #c700ff;
     }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 2rem;
+      padding: 180px 2rem 3rem;
+      text-align: center;
     }
+
     h1 {
       font-size: 2.5rem;
       font-family: "Orbitron", sans-serif;
       background: linear-gradient(90deg, #d94cff, #ff70ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
+
     p.description {
-      text-align: center;
       font-size: 1.2rem;
       color: #444;
     }
+
     .deploy-status {
       text-align: center;
       padding: 2rem;
@@ -56,10 +108,12 @@
       border-radius: 10px;
       margin-top: 2rem;
     }
+
     .deploy-status h3 {
       color: #00cc88;
       margin-bottom: 0.5rem;
     }
+
     .deploy-interface {
       background: rgba(255, 255, 255, 0.8);
       border: 1px solid #ccc;
@@ -67,9 +121,11 @@
       border-radius: 15px;
       margin-top: 2rem;
     }
+
     .deploy-interface h3 {
       color: #d94cff;
     }
+
     .deploy-button {
       background: #d94cff;
       color: white;
@@ -82,42 +138,79 @@
       width: 100%;
       margin-top: 1rem;
     }
+
     .deploy-button:hover {
       background: #ff70ff;
-      transform: scale(1.02);
+      transform: scale(1.05);
     }
+
     .tips {
       background: #fff;
       padding: 1.5rem;
       border-radius: 10px;
       margin-top: 2rem;
       border: 1px solid #eee;
+      text-align: left;
     }
+
     .tips h3 {
       color: #ff70ff;
+      margin-bottom: 0.8rem;
     }
+
     .tips ul {
       color: #555;
       padding-left: 1.5rem;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
-      color: #999;
+      color: #888;
       margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 10px 20px;
+        gap: 16px;
+        right: 12px;
+        left: auto;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .logo-fixed {
+        height: 70px;
+        top: 12px;
+        left: 12px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="vault.html">Vault</a> |
-    <a href="studio.html">Studio</a> |
-    <a href="builder.html">Builder</a> |
-    <a href="checkout.html">Checkout</a> |
-    <a href="ledger.html">Ledger</a> |
-    <a href="deploy.html">Deploy</a>
-  </nav>
+
+  <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" class="logo-fixed" />
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="vault.html">Vault</a>
+      <a href="studio.html">Studio</a>
+      <a href="builder.html">Builder</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="ledger.html">Ledger</a>
+      <a href="deploy.html">Deploy</a>
+    </nav>
+  </header>
 
   <div class="container">
     <h1>Deploy Console</h1>
@@ -146,6 +239,10 @@
   </div>
 
   <footer>© 2025 WUPTV. All rights reserved.</footer>
-  <script src="scripts/script.js"></script>
+  <script>
+    function deployUnits() {
+      alert("🚀 Deployment Started!");
+    }
+  </script>
 </body>
 </html>
