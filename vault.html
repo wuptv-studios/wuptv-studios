@@ -20,6 +20,14 @@
       overflow-x: hidden;
     }
 
+    .logo-fixed {
+      position: fixed;
+      top: 18px;
+      left: 24px;
+      height: 100px;
+      z-index: 1000;
+    }
+
     header {
       position: fixed;
       top: 24px;
@@ -35,11 +43,6 @@
       -webkit-backdrop-filter: blur(16px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
       z-index: 999;
-    }
-
-    header img {
-      height: 300px;
-      margin-right: 20px;
     }
 
     nav {
@@ -150,8 +153,10 @@
         justify-content: center;
       }
 
-      header img {
-        height: 84px;
+      .logo-fixed {
+        height: 70px;
+        top: 12px;
+        left: 12px;
       }
 
       h1 {
@@ -166,8 +171,10 @@
 </head>
 <body>
 
+  <!-- Logo outside the nav -->
+  <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" class="logo-fixed" />
+
   <header>
-    <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" />
     <nav>
       <a href="index.html">Home</a>
       <a href="#">Vault</a>
