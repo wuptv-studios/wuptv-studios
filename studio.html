@@ -6,49 +6,101 @@
   <title>WUPTV Studio | Creator Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet" />
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      margin: 0;
       font-family: "Inter", sans-serif;
-      background: linear-gradient(135deg, #ffffff, #f9f9ff);
+      background: url('assets/images/studio-bg-light.png') no-repeat center center fixed;
+      background-size: cover;
       color: #111;
       min-height: 100vh;
+      overflow-x: hidden;
     }
+
+    .logo-fixed {
+      position: fixed;
+      top: -36px;
+      left: 102px;
+      height: 160px;
+      z-index: 1000;
+    }
+
+    header {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 20px;
+      padding: 10px 30px;
+      gap: 30px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 0 12px rgba(199, 0, 255, 0.4), 0 0 24px rgba(199, 0, 255, 0.3), 0 4px 18px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+    }
+
     nav {
-      background: rgba(217, 76, 255, 0.1);
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 2px solid #d94cff;
+      display: flex;
+      gap: 24px;
     }
+
     nav a {
-      color: #d94cff;
+      color: #333;
       text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      font-weight: 500;
+      font-size: 15px;
+      position: relative;
+      transition: all 0.2s ease;
     }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #c700ff;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
     nav a:hover {
-      color: #ff70ff;
+      color: #c700ff;
     }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 2rem;
+      padding: 180px 2rem 3rem;
+      text-align: center;
     }
+
     h1 {
       font-size: 2.5rem;
       font-family: "Orbitron", sans-serif;
       background: linear-gradient(90deg, #d94cff, #ff70ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
+
     .studio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
     }
+
     .studio-card {
       background: #f7f7f7;
       border: 1px solid #ccc;
@@ -57,10 +109,12 @@
       text-align: center;
       transition: all 0.3s ease;
     }
+
     .studio-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(217, 76, 255, 0.15);
     }
+
     .apply-button {
       background: #d94cff;
       color: white;
@@ -72,32 +126,62 @@
       transition: all 0.3s ease;
       margin-top: 1rem;
     }
+
     .apply-button:hover {
       background: #ff70ff;
       transform: scale(1.05);
     }
+
     footer {
       text-align: center;
       padding: 2rem;
       color: #888;
       margin-top: 3rem;
     }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 10px 20px;
+        gap: 16px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .logo-fixed {
+        height: 70px;
+        top: 12px;
+        left: 12px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="vault.html">Vault</a> |
-    <a href="studio.html">Studio</a> |
-    <a href="builder.html">Builder</a> |
-    <a href="checkout.html">Checkout</a> |
-    <a href="ledger.html">Ledger</a> |
-    <a href="deploy.html">Deploy</a>
-  </nav>
+
+  <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" class="logo-fixed" />
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="vault.html">Vault</a>
+      <a href="studio.html">Studio</a>
+      <a href="builder.html">Builder</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="ledger.html">Ledger</a>
+      <a href="deploy.html">Deploy</a>
+    </nav>
+  </header>
 
   <div class="container">
     <h1>WUPTV Studio</h1>
-    <p style="text-align: center; font-size: 1.2rem; color: #555;">Join the elite creator network</p>
+    <p style="font-size: 1.2rem; color: #555;">Join the elite creator network</p>
 
     <div class="studio-grid">
       <div class="studio-card">
@@ -119,6 +203,10 @@
   </div>
 
   <footer>© 2025 WUPTV. All rights reserved.</footer>
-  <script src="scripts/script.js"></script>
+  <script>
+    function applyStudio(type) {
+      alert("Applying for: " + type);
+    }
+  </script>
 </body>
 </html>
