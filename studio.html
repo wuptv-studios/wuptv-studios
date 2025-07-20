@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WUPTV Studio | Creator Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet"/>
@@ -28,7 +28,7 @@
     header {
       position: fixed;
       top: 24px;
-      right: 88px;
+      right: 178px;
       display: flex;
       align-items: center;
       background: rgba(255, 255, 255, 0.35);
@@ -95,8 +95,14 @@
     }
 
     @keyframes pulseTitle {
-      0%, 100% { opacity: 1; text-shadow: 0 0 6px #e600ff; }
-      50% { opacity: 0.85; text-shadow: 0 0 12px #e600ff; }
+      0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 6px #e600ff;
+      }
+      50% {
+        opacity: 0.85;
+        text-shadow: 0 0 12px #e600ff;
+      }
     }
 
     .subtitle {
@@ -244,7 +250,6 @@
       alert("Applying for: " + type);
     }
 
-    // Sparkle effect on nav click
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', (e) => {
         const sparkle = document.createElement('div');
