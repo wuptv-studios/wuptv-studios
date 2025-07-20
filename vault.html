@@ -33,12 +33,12 @@
       gap: 30px;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
       z-index: 999;
     }
 
     header img {
-      height: 36px;
+      height: 108px;
       margin-right: 20px;
     }
 
@@ -53,6 +53,7 @@
       font-weight: 500;
       font-size: 15px;
       position: relative;
+      transition: all 0.2s ease;
     }
 
     nav a::after {
@@ -68,6 +69,10 @@
       transition: transform 0.3s ease;
     }
 
+    nav a:hover {
+      color: #c700ff;
+    }
+
     nav a:hover::after {
       transform: scaleX(1);
       transform-origin: left;
@@ -75,7 +80,7 @@
 
     .container {
       text-align: center;
-      padding: 160px 20px 60px;
+      padding: 180px 20px 60px;
     }
 
     h1 {
@@ -83,6 +88,18 @@
       font-size: 48px;
       color: #e600ff;
       margin-bottom: 10px;
+      animation: pulseTitle 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulseTitle {
+      0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 6px #e600ff;
+      }
+      50% {
+        opacity: 0.85;
+        text-shadow: 0 0 12px #e600ff;
+      }
     }
 
     .subtitle {
@@ -100,6 +117,7 @@
       opacity: 0.6;
       border-radius: 50%;
       animation: sparkleFade 0.6s ease-out forwards;
+      filter: blur(2px);
       z-index: 999;
     }
 
@@ -119,6 +137,31 @@
       font-size: 14px;
       color: #777;
     }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 10px 20px;
+        gap: 16px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      header img {
+        height: 84px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -126,7 +169,7 @@
   <header>
     <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" />
     <nav>
-      <a href="#">Home</a>
+      <a href="index.html">Home</a>
       <a href="#">Vault</a>
       <a href="#">Studio</a>
       <a href="#">Builder</a>
