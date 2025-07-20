@@ -6,11 +6,7 @@
   <title>Femme Unit Vault</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -23,7 +19,7 @@
     .logo-fixed {
       position: fixed;
       top: -36px;
-      left: 100px;
+      left: 102px;
       height: 160px;
       z-index: 1000;
     }
@@ -41,7 +37,7 @@
       gap: 30px;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 12px rgba(199, 0, 255, 0.4), 0 0 24px rgba(199, 0, 255, 0.3), 0 4px 18px rgba(0, 0, 0, 0.15);
       z-index: 999;
     }
 
@@ -95,14 +91,8 @@
     }
 
     @keyframes pulseTitle {
-      0%, 100% {
-        opacity: 1;
-        text-shadow: 0 0 6px #e600ff;
-      }
-      50% {
-        opacity: 0.85;
-        text-shadow: 0 0 12px #e600ff;
-      }
+      0%, 100% { opacity: 1; text-shadow: 0 0 6px #e600ff; }
+      50% { opacity: 0.85; text-shadow: 0 0 12px #e600ff; }
     }
 
     .subtitle {
@@ -125,14 +115,8 @@
     }
 
     @keyframes sparkleFade {
-      0% {
-        transform: scale(0.5);
-        opacity: 0.9;
-      }
-      100% {
-        transform: scale(2.4);
-        opacity: 0;
-      }
+      0% { transform: scale(0.5); opacity: 0.9; }
+      100% { transform: scale(2.4); opacity: 0; }
     }
 
     footer {
