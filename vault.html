@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Femme Unit Vault</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <title>Femme Unit Vault | WUPTV Studios</title>
   <style>
     * {
       margin: 0;
@@ -14,148 +13,132 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: url('assets/images/studio-bg-light.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #000;
-      overflow-x: hidden;
-    }
-
-    header {
-      position: fixed;
-      top: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.35);
-      border-radius: 20px;
-      padding: 10px 30px;
-      gap: 30px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-    }
-
-    header img {
-      height: 36px;
-      margin-right: 20px;
-    }
-
-    nav {
-      display: flex;
-      gap: 24px;
-    }
-
-    nav a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 15px;
+      color: white;
+      background: url('assets/images/studio-bg-glow.png') no-repeat center center / cover;
+      height: 100vh;
       position: relative;
+      overflow: hidden;
     }
 
-    nav a::after {
-      content: '';
+    .bg-overlay {
       position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #c700ff;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
+      inset: 0;
+      background: rgba(15, 6, 29, 0.45);
+      backdrop-filter: blur(2px);
+      z-index: 0;
     }
 
-    nav a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
+    .glass-nav {
+      position: relative;
+      z-index: 2;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 1080px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 28px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
     }
 
-    .container {
+    .nav-logo {
+      width: 120px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffb6ff;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
       text-align: center;
-      padding: 160px 20px 60px;
+      margin-top: 120px;
     }
 
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 48px;
-      color: #e600ff;
-      margin-bottom: 10px;
+    .content h1 {
+      font-size: 3.8rem;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #ff3fda;
+      text-shadow: 0 0 10px #f0f;
     }
 
-    .subtitle {
-      font-size: 18px;
-      color: #444;
-      font-weight: 500;
+    .content p.tagline {
+      margin-top: 18px;
+      font-size: 1.1rem;
+      color: #f5f5f5;
+      text-shadow: 0 0 6px rgba(255,255,255,0.3);
     }
 
-    .sparkle {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      pointer-events: none;
-      background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
-      opacity: 0.6;
+    .blue-spark {
+      margin: 40px auto 0;
+      width: 12px;
+      height: 12px;
+      background: cyan;
       border-radius: 50%;
-      animation: sparkleFade 0.6s ease-out forwards;
-      z-index: 999;
+      box-shadow: 0 0 12px cyan, 0 0 24px cyan;
+      animation: pulse 2.5s infinite ease-in-out;
     }
 
-    @keyframes sparkleFade {
-      0% {
-        transform: scale(0.5);
-        opacity: 0.9;
-      }
-      100% {
-        transform: scale(2.4);
-        opacity: 0;
-      }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.4); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
     }
 
     footer {
-      margin-top: 80px;
-      font-size: 14px;
-      color: #777;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #eee;
+      z-index: 2;
     }
   </style>
 </head>
 <body>
+  <div class="bg-overlay"></div>
 
-  <header>
-    <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" />
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Vault</a>
-      <a href="#">Studio</a>
-      <a href="#">Builder</a>
-      <a href="#">Checkout</a>
-      <a href="#">Ledger</a>
-      <a href="#">Deploy</a>
-    </nav>
-  </header>
+  <nav class="glass-nav">
+    <img src="assets/images/wuptv-studios-logo.png" alt="WUPTV Studios Logo" class="nav-logo"/>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Vault</a></li>
+      <li><a href="#">Studio</a></li>
+      <li><a href="#">Builder</a></li>
+      <li><a href="#">Checkout</a></li>
+      <li><a href="#">Ledger</a></li>
+      <li><a href="#">Deploy</a></li>
+    </ul>
+  </nav>
 
-  <div class="container">
-    <h1>Femme Unit Vault</h1>
-    <p class="subtitle">Exclusive drops for creators with presence.</p>
+  <main class="content">
+    <h1><span>Femme Unit</span><br/>Vault</h1>
+    <p class="tagline">Exclusive drops for creators with presence.</p>
+    <div class="blue-spark"></div>
+  </main>
 
-    <footer>© 2025 <strong>WUPTV</strong>. All rights reserved.</footer>
-  </div>
-
-  <script>
-    // Sparkle effect on nav click
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const sparkle = document.createElement('div');
-        sparkle.classList.add('sparkle');
-        sparkle.style.left = `${e.pageX - 30}px`;
-        sparkle.style.top = `${e.pageY - 30}px`;
-        document.body.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 600);
-      });
-    });
-  </script>
-
+  <footer>
+    <p>© 2025 WUPTV. All rights reserved.</p>
+  </footer>
 </body>
 </html>
